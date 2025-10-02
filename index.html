@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hans Schroll – Links</title>
   <style>
-    :root {
+    :root{
       --img-w: 3840;
       --img-h: 2160;
       --icon-size: 250;
@@ -14,62 +14,24 @@
       --y3: 1450;
       --y4: 1800;
     }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, sans-serif;
-      height: 100%;
-    }
-
-    .page {
-      min-height: 100vh;      /* ✅ statt height: 100svh */
-      position: relative;
-      overflow: auto;         /* ✅ erlaubt Scrollen bei kleinen Bildschirmen */
-    }
-
+    html, body { height: 100%; margin: 0; font-family: system-ui, sans-serif; }
+    .page { height: 100svh; position: relative; overflow: hidden; }
     .bg {
-      position: fixed;        /* ✅ bleibt beim Scrollen sichtbar */
-      inset: 0;
+      position: absolute; inset: 0;
       background-image: url('wallpaper_strong_original_icons_closer.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      z-index: -1;
+      background-size: cover; background-position: center; background-repeat: no-repeat;
     }
-
-    .link-area {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      display: block;
-      text-decoration: none;
-      outline: none;
+    .link-area { position: absolute; left: 50%; transform: translateX(-50%); display: block; text-decoration: none; outline: none; }
+    .link-area:focus-visible { outline: 3px dashed rgba(255,255,255,.8); outline-offset: 4px; }
+    .link-area { 
       width: calc((var(--icon-size) / var(--img-w)) * 100vw);
       height: calc((var(--icon-size) / var(--img-h)) * 100vh);
     }
-
-    .link-area:focus-visible {
-      outline: 3px dashed rgba(255,255,255,.8);
-      outline-offset: 4px;
-    }
-
     .yt   { top: calc((var(--y1) / var(--img-h)) * 100vh); }
     .ig   { top: calc((var(--y2) / var(--img-h)) * 100vh); }
     .fb   { top: calc((var(--y3) / var(--img-h)) * 100vh); }
     .mail { top: calc((var(--y4) / var(--img-h)) * 100vh); }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0,0,0,0);
-      white-space: nowrap;
-      border: 0;
-    }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
   </style>
 </head>
 <body>
@@ -86,7 +48,7 @@
       <span class="sr-only">Facebook</span>
     </a>
     <a class="link-area mail" href="mailto:hcschroll@gmx.de" aria-label="E-Mail senden">
-      <span class="sr-only">E-Mail</span>
+      <span class="sr-only">E‑Mail</span>
     </a>
   </main>
 </body>
